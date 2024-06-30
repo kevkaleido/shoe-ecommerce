@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Detail</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <header>
         <div class="logo">Footwear Shop</div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="../index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="cart.html">Cart</a></li>
             </ul>
@@ -26,13 +26,22 @@
                 <h2>Nike Air Max 90</h2>
                 <p>The Nike Air Max 90 stays true to its OG running roots with a waffle outsole, stitched overlays, and classic TPU accents. Bold colors celebrate the individual design, making you stand out.</p>
                 <p>Price: $130</p>
-                <button>Add to Cart</button>
+                <button class="add-to-cart">Add to Cart</button>
             </div>
         </section>
+        <h2>Cart</h2>
+        <ul class="cart" id="cart"></ul>
+        <div class="cart-total">
+            <strong>Total: $<span id="total-amount">0.00</span></strong>
+        </div>
+        <div class="checkout">
+            <button id="checkout-button">Proceed to Checkout</button>
+            <button id="remove-all-button">Remove All</button>
+        </div>
     </main>
     <footer>
         <p>&copy; 2024 Footwear Shop</p>
     </footer>
-    <script src="scripts.js"></script>
+    <script src="../js/scriptt.js"></script>
 </body>
 </html>
