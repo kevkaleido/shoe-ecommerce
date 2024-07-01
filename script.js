@@ -1,24 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const productGrid = document.getElementById('product-grid');
     const cartList = document.getElementById('cart');
     const totalAmountElement = document.getElementById('total-amount');
     const checkoutButton = document.getElementById('checkout-button');
     const removeAllButton = document.getElementById('remove-all-button');
+    const addToCartButton = document.querySelector('.add-to-cart');
+    const productDetail = document.querySelector('.product-detail');
+    const productGrid = document.getElementById('product-grid');
+
+    if (productDetail) {
+        addToCartButton.addEventListener('click', () => {
+            const productItem = productDetail;
+            addToCart(productItem, true); // true indicates this is a detailed product
+        });
+    }
 
     if (productGrid) {
         productGrid.addEventListener('click', (event) => {
             if (event.target.classList.contains('add-to-cart')) {
                 const productItem = event.target.closest('.product-item');
-                addToCart(productItem);
+                addToCart(productItem, false); // false indicates this is from the product grid
             }
         });
     }
 
-    function addToCart(productItem) {
-        const productId = productItem.getAttribute('data-id');
-        const productName = productItem.getAttribute('data-name');
-        const productPrice = parseFloat(productItem.getAttribute('data-price'));
+    function addToCart(productItem, isDetail) {
+        let productId, productName, productPrice;
+
+        if (isDetail) {
+            productId = 'nike-air-max-90'; // Assuming a fixed ID for this product
+            productName = 'Nike Air Max 90';
+            productPrice = 130.00; // Fixed price for this product
+        } else {
+            productId = productItem.getAttribute('data-id');
+            productName = productItem.getAttribute('data-name');
+            productPrice = parseFloat(productItem.getAttribute('data-price'));
+        }
 
         const cartItem = {
             id: productId,

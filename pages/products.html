@@ -6,7 +6,7 @@
     <title>Footwear Products</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
-<body>
+<body class="productbody">
     <header>
         <div class="logo">Footwear Shop</div>
         <nav>
@@ -110,16 +110,17 @@
         </div>
     </section>
     
-    <h2>Cart</h2>
-    <ul class="cart" id="cart"></ul>
-    <div class="cart-total">
-        <strong>Total: $<span id="total-amount">0.00</span></strong>
+    <div class="cart-container">
+        <h2>Cart</h2>
+        <ul class="cart" id="cart"></ul>
+        <div class="cart-total">
+            <strong>Total: $<span id="total-amount">0.00</span></strong>
+        </div>
+        <div class="checkout">
+            <button id="checkout-button">Proceed to Checkout</button>
+            <button id="remove-all-button">Remove All</button>
+        </div>
     </div>
-    <div class="checkout">
-        <button id="checkout-button">Proceed to Checkout</button>
-        <button id="remove-all-button">Remove All</button>
-    </div>
-
     <script src="../script.js"></script>
 </body>
 </html>

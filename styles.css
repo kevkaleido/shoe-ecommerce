@@ -11,7 +11,11 @@ body {
     margin: 20px;
     background-color: #fffbfb;
     color: #333;
+    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
 
 header {
     display: flex;
@@ -51,15 +55,24 @@ header nav ul li a:hover {
 .main {
     padding: 20px;
 }
-
 footer {
     text-align: center;
     padding: 12px;
-    background-color: #f1f1f1;
-    margin-top: 400px;
     border-radius: 5px;
+    background-color: #f1f1f1;
+    font-size: 12px;
+   margin-top: auto;
 }
 
+footer p:first-of-type{
+    font-weight: bold;
+}
+footer a{
+    text-decoration: none;
+    color: #ff9c08;
+    font-weight: 700;
+
+}
 .product-list {
     padding: 20px;
 }
@@ -85,6 +98,9 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.product-item a{
+    text-decoration: none;
+}
 .product-item img {
     max-width: 100%;
     height: auto;
@@ -172,6 +188,7 @@ button:hover {
     }
 }
 
+
 .remove-button {
     margin-left: 10px;
     padding: 2px 5px;
@@ -188,3 +205,11 @@ button:hover {
     background-color: #ff1a1a;
 }
 
+.cart-container {
+    padding: 20px;
+
+}
+
+.cart {
+    padding: 20px;
+}

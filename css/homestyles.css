@@ -10,6 +10,9 @@ body {
     margin: 20px;
     background-color: #f9f9f9;
     color: #333;
+    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -109,10 +112,20 @@ main {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+
 .featured-products img:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
+
+.featured-products a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600; 
+    border-radius: 5px; 
+}
+
+
 
 .newsletter {
     text-align: center;
@@ -149,4 +162,16 @@ footer {
     padding: 12px;
     border-radius: 5px;
     background-color: #f1f1f1;
+    font-size: 12px;
+    margin-top: auto;
+}
+
+footer p:first-of-type{
+    font-weight: bold;
+}
+footer a{
+    text-decoration: none;
+    color: #ff9c08;
+    font-weight: 700;
+
 }
