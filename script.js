@@ -4,14 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalAmountElement = document.getElementById('total-amount');
     const checkoutButton = document.getElementById('checkout-button');
     const removeAllButton = document.getElementById('remove-all-button');
-    const addToCartButton = document.querySelector('.add-to-cart');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
     const productDetail = document.querySelector('.product-detail');
     const productGrid = document.getElementById('product-grid');
 
     if (productDetail) {
-        addToCartButton.addEventListener('click', () => {
-            const productItem = productDetail;
-            addToCart(productItem, true); // true indicates this is a detailed product
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const productItem = button.closest('.product-detail');
+                addToCart(productItem, true); // true indicates this is a detailed product
+            });
         });
     }
 
@@ -28,9 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let productId, productName, productPrice;
 
         if (isDetail) {
-            productId = 'nike-air-max-90'; // Assuming a fixed ID for this product
-            productName = 'Nike Air Max 90';
-            productPrice = 130.00; // Fixed price for this product
+            productId = productItem.getAttribute('data-id');
+            productName = productItem.querySelector('h2').innerText;
+            productPrice = parseFloat(productItem.querySelector('p:nth-child(3)').innerText.replace('Price: $', ''));
         } else {
             productId = productItem.getAttribute('data-id');
             productName = productItem.getAttribute('data-name');
