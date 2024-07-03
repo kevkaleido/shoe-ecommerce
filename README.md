@@ -1,6 +1,6 @@
 Footwear Shop Application with responsive design
 
-This project is done using HTML, CSS, and JavaScript. Users can browse products on the product grid page, view detailed information on individual product pages, add items to their cart, and manage their cart.
+This project is being done using HTML, CSS, and JavaScript. Users can browse products on the product grid page, view detailed information on individual product pages, add items to their cart, and manage their cart.
 
 Features
 
